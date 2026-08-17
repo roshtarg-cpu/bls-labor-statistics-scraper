@@ -8,55 +8,42 @@
   "dockerfile": "./Dockerfile",
   "output": {
     "actorOutputSchemaVersion": 1,
-    "fields": [
-      {
-        "name": "seriesId",
+    "properties": {
+      "seriesId": {
         "type": "string",
         "description": "BLS series ID",
         "template": "{{{seriesId}}}"
       },
-      {
-        "name": "year",
+      "year": {
         "type": "string",
         "description": "Year of data point",
         "template": "{{{year}}}"
       },
-      {
-        "name": "period",
+      "period": {
         "type": "string",
         "description": "Month period code",
         "template": "{{{period}}}"
       },
-      {
-        "name": "periodName",
+      "periodName": {
         "type": "string",
         "description": "Month name",
         "template": "{{{periodName}}}"
       },
-      {
-        "name": "value",
+      "value": {
         "type": "string",
         "description": "Data value",
         "template": "{{{value}}}"
       },
-      {
-        "name": "footnotes",
-        "type": "string",
-        "description": "Any footnotes for the data point",
-        "template": "{{{footnotes}}}"
-      },
-      {
-        "name": "seriesTitle",
+      "seriesTitle": {
         "type": "string",
         "description": "Human readable series title",
         "template": "{{{seriesTitle}}}"
       },
-      {
-        "name": "scrapedAt",
+      "scrapedAt": {
         "type": "string",
         "description": "Timestamp of scrape",
         "template": "{{{scrapedAt}}}"
       }
-    ]
+    }
   }
 }
