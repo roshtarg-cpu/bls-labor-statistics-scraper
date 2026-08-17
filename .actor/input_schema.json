@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "title": "BLS Labor Statistics Scraper Input",
+  "description": "Configure which BLS data series to fetch",
+  "type": "object",
+  "properties": {
+    "seriesIds": {
+      "title": "Series IDs",
+      "type": "array",
+      "description": "List of BLS series IDs to fetch. E.g. CUUR0000SA0 (CPI), LNS14000000 (unemployment rate), CES0000000001 (total nonfarm payroll)",
+      "editor": "json",
+      "default": ["CUUR0000SA0", "LNS14000000", "CES0000000001"],
+      "prefill": ["CUUR0000SA0", "LNS14000000", "CES0000000001"]
+    },
+    "startYear": {
+      "title": "Start Year",
+      "type": "integer",
+      "description": "Start year for data retrieval (e.g. 2020)",
+      "default": 2020,
+      "prefill": 2020,
+      "minimum": 1913,
+      "maximum": 2030
+    },
+    "endYear": {
+      "title": "End Year",
+      "type": "integer",
+      "description": "End year for data retrieval (e.g. 2024)",
+      "default": 2024,
+      "prefill": 2024,
+      "minimum": 1913,
+      "maximum": 2030
+    },
+    "registrationKey": {
+      "title": "BLS Registration Key (Optional)",
+      "type": "string",
+      "description": "Optional BLS API registration key for higher rate limits. Without a key, daily limit is 25 queries. Register free at https://data.bls.gov/registrationEngine/",
+      "editor": "textfield",
+      "default": "",
+      "prefill": "",
+      "sectionCaption": "BLS API Settings"
+    },
+    "maxResults": {
+      "title": "Max Results",
+      "type": "integer",
+      "description": "Maximum number of data points to return per series",
+      "default": 50,
+      "prefill": 10,
+      "minimum": 1,
+      "maximum": 10000
+    }
+  },
+  "required": []
+}
