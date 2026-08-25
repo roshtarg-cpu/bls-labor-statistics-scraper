@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "bls-labor-statistics-scraper",
-  "title": "BLS Labor Statistics Scraper — CPI, Jobs & Wages",
+  "title": "BLS Labor Statistics Scraper \u2014 CPI, Jobs & Wages",
   "description": "Scrapes Bureau of Labor Statistics data: CPI, employment, wages, and unemployment series. Returns structured JSON for economists, analysts, and AI agents. Works with Claude, ChatGPT, and AI agents via Apify MCP.",
   "version": "0.1",
   "buildTag": "latest",
@@ -43,6 +43,30 @@
         "type": "string",
         "description": "Timestamp of scrape",
         "template": "{{{scrapedAt}}}"
+      }
+    }
+  },
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "fields": {},
+      "views": {
+        "overview": {
+          "title": "Results",
+          "transformation": {
+            "fields": [
+              "seriesId",
+              "seriesTitle",
+              "year",
+              "period",
+              "periodName",
+              "value",
+              "latest",
+              "footnotes",
+              "scrapedAt"
+            ]
+          }
+        }
       }
     }
   }
